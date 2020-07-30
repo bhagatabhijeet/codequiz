@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="Assets/styles/default.css" />
+    <title>Code Quiz</title>
+</head>
+
+<body>
+    <nav class="navbar fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="Assets/images/logo.png" width="40" height="40" class="d-inline-block align-top" alt=""
+                loading="lazy">
+            Code Quiz
+        </a>
+    </nav>
+
+    <div class="screen-left"></div>
+    <div class="screen-right"></div>
+    <img src="Assets/images/logo.png" class="screen-center" />
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <img id="homepageimage" src="Assets/images/logo.png" alt="logo image" />
+                <div id="welcome-big">Code Quiz</div>
+                <div id="welcome-small">Technology Code Quizzes</div>
+            </div>
+            <div class="col-sm-1">
+                <span>
+                    <img id="blacktriangle" src="Assets/images/black-triangle.png" />
+                </span>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="row">
+
+                    <div class="col-lg-12 mt-auto d-flex flex-row justify-content-center align-items-center flex-wrap">
+                        <!-- <a href="#" class="badge"><img src="Assets/images/logo.png" height="30px"/> -->
+
+                        <span class="quiz-pill">
+                            <a href="#" class="badge">JavaScript</a></span>
+
+
+
+                        <span class="quiz-pill"><a href="#" class="badge">C#</a></span>
+                        <span class="quiz-pill"><a href="#" class="badge">Java</a></span>
+                        <span class="quiz-pill"><a href="#" class="badge">Python 3</a></span>
+                        <span class="quiz-pill"><a href="#" class="badge">Git</a></span>
+                        <span class="quiz-pill"><a href="#" class="badge">CSS3</a></span>
+                        <span class="quiz-pill"><a href="#" class="badge">HTML5</a></span>
+                        <span class="quiz-pill"><a href="#" class="badge">SQL</a></span>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!--container end-->
+    <div style="height: 45px;"></div>
+    <footer>
+        hello
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="Assets/scripts/jquery-3.5.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            // $(".screen-center").fadeIn(600);
+            $(".screen-center").animate({left:"0%"},2000);
+            // $(".screen-left").delay(1000).animate({left:"50%"},1000);
+            // $(".screen-right").animate({left:"0%"},1000);
+            $(".screen-center").fadeOut(1000);
+            $(".screen-left").delay(2100).animate({left:"100%"},1000);
+            $(".screen-right").delay(2100).animate({width:"0",left:"0%"},1000);
+            // $(".screen-center").animate({top:"0%"},1000);
+            // $(".screen-center").fadeIn(600);
+            // $("#blacktriangle").animate({height:"300%",height:"40px"},20000);
+            // $(".screen-center").delay(1000).fadeOut(1500);
+            // $(".screen-center").css("display","none");
+        });
+    </script>
+
+</body>
+
+</html>
