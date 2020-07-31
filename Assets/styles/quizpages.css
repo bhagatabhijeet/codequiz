@@ -68,7 +68,7 @@ body{
 }
 
 .quiz-container{
-    visibility: hidden;
+    display:none;
 }
 
 #question{
@@ -94,4 +94,17 @@ body{
 }
 .modal .modal-dialog .modal-content{
     background-color: rgb(195, 213, 247) !important;
+}
+
+#quiz-start-div{
+    margin-left: auto;;
+    margin-right: auto;
+    width:150px;
+}
+#qmetadiv{
+    text-align: right;
+    font-size: small;
+}
+.btn-block{
+    text-align: left;
 }

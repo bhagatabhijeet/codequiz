@@ -39,7 +39,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="readMeModalLongTitle">
-                        <img src="Assets/images/pill_arrow.png" height="25px">
+                        <img src="Assets/images/pill_arrow.png" height="30px">
                         JavaScript Quiz - Read Me</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -49,12 +49,12 @@
                     <ul>
                         <li><em>Code Quiz</em>'s <strong>JavaScript Quiz</strong> is a set of JavaScript basic to
                             intermediate level questions.</li>
-                        <li>You are presented with multiple options for answer.</li>
+                        <li>You are presented with multiple options for an answer.</li>
                         <li>You have to finish the quiz within alloted time.</li>                        
-                        <li>The timer will start ticking as soon as you click 'Start Quiz' button.</li>
-                        <li>After selecting option, we'll show if your answer was correct or incorrect.</li>
-                        <li>For every wrong answer 10 seconds is subtracted from your available time.</li>
-                        <li>The quiz is over when you have answered all questions or you run out of time.</li>
+                        <li>The timer will start ticking as soon as you click the <em>'Start Quiz'</em> button.</li>
+                        <li>After selecting an option, we'll show if your answer was correct or incorrect.</li>
+                        <li>For every wrong answer, 10 seconds is subtracted from your available time.</li>
+                        <li>The quiz is over when you have answered all questions, or you run out of time.</li>
                         <li>You'll be presented with your final score summary and option to save your score.</li>
                     </ul>
 
@@ -81,16 +81,27 @@
                 </div>
                 <div class="quiz-container">
                     <div id="question">
-                        <div id="qnumdiv"><span>Question - </span><span id="qnum"></span></div>
+                        <div id="qnumdiv">
+                            <span>Question - </span>
+                            <span id="qnum"></span>                            
+                        </div>
+                        <div id="qmetadiv">
+                            <span>Level : </span><span id="dlevel"></span>
+                            <span>|</span>
+                            <span>Category : </span><span id="category"></span>                            
+                        </div>
+
                         <hr>
                         <div id="qtext">Question</div>
                         <hr>
                     </div>
                     <div id="options">
-                        <ol>
-                            <li>one</li>
-                            <li>two</li>
-                        </ol>
+                        <!-- <ul style="list-style-type: none;" id="options-list"> -->
+                            <!-- <li> -->
+                                <button type="button" class="btn btn-primary btn-md btn-block">Block level button</button>
+                            <!-- </li> -->
+                           
+                        <!-- </ul> -->
                     </div>
                     <div id="feedback"><i class="fa fa-check-circle" aria-hidden="true"></i></div>
                     <!-- <div id="controls">Controls</div> -->
