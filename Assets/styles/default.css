@@ -27,6 +27,7 @@ body{
 }
 .navbar{
     background-color: #000000;
+    color:ivory;
 }
 .navbar-brand{
     color:#1181b2 !important;
@@ -187,8 +188,9 @@ footer{
     background-color: black;
     width:100%;
     text-align: center;
-    color:#4ca8cd;
+    color:ivory;
     font-size: 15px;
+    border-bottom: 2px ivory groove;
     /* margin-left:2%; */
 }
 /* btn-lg btn-dark*/
