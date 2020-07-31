@@ -10,8 +10,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+    <!-- my stylesheet -->
     <link rel="stylesheet" type="text/css" href="Assets/styles/default.css" />
     <title>Code Quiz</title>
 </head>
@@ -19,9 +22,9 @@
 <body>
     <nav class="navbar fixed-top">
         <a class="navbar-brand" href="#">
-            <img src="Assets/images/logo.png" width="40" height="40" class="d-inline-block align-top" alt=""
+            <img src="Assets/images/logo.png" width="35" height="35" class="d-inline-block align-top" alt=""
                 loading="lazy">
-            Code Quiz
+            
         </a>
     </nav>
 
@@ -30,37 +33,41 @@
     <img src="Assets/images/logo.png" class="screen-center" />
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <img id="homepageimage" src="Assets/images/logo.png" alt="logo image" />
                 <div id="welcome-big">Code Quiz</div>
                 <div id="welcome-small">Technology Code Quizzes</div>
             </div>
-            <div class="col-sm-1">
-                <span>
-                    <img id="blacktriangle" src="Assets/images/black-triangle.png" />
-                </span>
-            </div>
-
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <div class="row">
 
-                    <div class="col-lg-12 mt-auto d-flex flex-row justify-content-center align-items-center flex-wrap">
-                        <!-- <a href="#" class="badge"><img src="Assets/images/logo.png" height="30px"/> -->
-
-                        <span class="quiz-pill">
-                            <a href="#" class="badge">JavaScript</a></span>
-
-
-
-                        <span class="quiz-pill"><a href="#" class="badge">C#</a></span>
-                        <span class="quiz-pill"><a href="#" class="badge">Java</a></span>
-                        <span class="quiz-pill"><a href="#" class="badge">Python 3</a></span>
-                        <span class="quiz-pill"><a href="#" class="badge">Git</a></span>
-                        <span class="quiz-pill"><a href="#" class="badge">CSS3</a></span>
-                        <span class="quiz-pill"><a href="#" class="badge">HTML5</a></span>
-                        <span class="quiz-pill"><a href="#" class="badge">SQL</a></span>
-
+                    <div class="col mt-auto d-flex flex-row align-content-center justify-content-around flex-wrap"> 
+                        
+                        <a class="btn btn-lg active" href="#" role="button"><img src="Assets/images/pill_arrow_trans.png" height="20px" />JavaScript</a>
+                        <a class="btn btn-lg" href="#" role="button"><img src="Assets/images/pill_arrow_trans.png" height="20px" />GIT</a>
+                        <!-- 
+                        Buttons for future code quizzes
+                        <a class="btn btn-lg" href="#" role="button"><img src="Assets/images/pill_arrow_trans.png" height="20px" />C#</a>
+                        <a class="btn btn-lg" href="#" role="button"><img src="Assets/images/pill_arrow_trans.png" height="20px" />HTML5</a>
+                        <a class="btn btn-lg" href="#" role="button"><img src="Assets/images/pill_arrow_trans.png" height="20px" />CSS3</a>
+                        <a class="btn btn-lg" href="#" role="button"><img src="Assets/images/pill_arrow_trans.png" height="20px" />JAVA</a>
+                        <a class="btn btn-lg" href="#" role="button"><img src="Assets/images/pill_arrow_trans.png" height="20px" />SQL</a>
+                     -->
+                        
                     </div>
+                </div>
+                <hr/>
+               
+                <div class="row">
+                    <div class="col mb-auto d-flex flex-column align-items-end justify-content-center flex-wrap">
+                        <div style="width: 250px;">                            
+                            <img src="Assets/images/hourglass_trans1.png" height="70px" style="display: block;
+                            margin-left: auto;
+                            margin-right: auto;"/>
+                            <div style="text-align: center;font-size: 25px;">More Quizzes Coming Soon</div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -70,7 +77,10 @@
     <!--container end-->
     <div style="height: 45px;"></div>
     <footer>
-        hello
+        <img src="Assets/images/pill_arrow.png" height="15px"> Coded By Abhijeet Bhagat
+        <a href="https://github.com/bhagatabhijeet/codequiz">
+            <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
     </footer>
 
     <!-- Optional JavaScript -->
@@ -89,12 +99,12 @@
     <script>
         $(document).ready(function () {
             // $(".screen-center").fadeIn(600);
-            $(".screen-center").animate({left:"0%"},2000);
+            $(".screen-center").animate({ left: "0%" }, 2000);
             // $(".screen-left").delay(1000).animate({left:"50%"},1000);
             // $(".screen-right").animate({left:"0%"},1000);
             $(".screen-center").fadeOut(1000);
-            $(".screen-left").delay(2100).animate({left:"100%"},1000);
-            $(".screen-right").delay(2100).animate({width:"0",left:"0%"},1000);
+            $(".screen-left").delay(2100).animate({ left: "100%" }, 1000);
+            $(".screen-right").delay(2100).animate({ width: "0", left: "0%" }, 1000);
             // $(".screen-center").animate({top:"0%"},1000);
             // $(".screen-center").fadeIn(600);
             // $("#blacktriangle").animate({height:"300%",height:"40px"},20000);
