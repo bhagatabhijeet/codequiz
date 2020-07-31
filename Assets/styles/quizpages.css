@@ -1,0 +1,33 @@
+body{
+    background: url("../images/quiz-page-background.png");
+    /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #99d9ea;
+  /* margin:0px; */
+  padding-top: 65px;
+}
+
+#homepageimage{    
+    height: 60px;
+    width:60px;
+    margin: 0px;
+    top:30%;
+    position: fixed;
+    
+    /* margin-left: 30px; */
+}
+
