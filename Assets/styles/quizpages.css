@@ -68,7 +68,7 @@ body{
 }
 
 .quiz-container{
-    display:none;
+    display:none;    
 }
 
 #question{
@@ -90,7 +90,13 @@ body{
 }
 #feedback{
     text-align: center;
-    visibility: hidden;
+    display: none;
+    background-color:rgb(35, 50, 190);
+    width:200px;
+    margin:auto;
+    border:1px inset;
+    color:gold;
+
 }
 .modal .modal-dialog .modal-content{
     background-color: rgb(195, 213, 247) !important;
