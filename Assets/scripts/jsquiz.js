@@ -48,28 +48,30 @@ let timercontrol, timeleft, timerInterval;
 let correctCount = 0;
 let incorrectCount = 0;
 
+quiz.setQuestionSource(jsquiz);
 
 
-document.getElementById("quiz-start").addEventListener("click", function () {
-    document.getElementById("quiz-start").style.display = "none";
-    $quizContainer.style.display = "block";
-    //qPointer points to question in Quiz Object.
-    let qPointer = 0;
-    timeleft = (jsquiz.length * 20);
+
+// document.getElementById("quiz-start").addEventListener("click", function () {
+//     document.getElementById("quiz-start").style.display = "none";
+//     $quizContainer.style.display = "block";
+//     //qPointer points to question in Quiz Object.
+//     let qPointer = 0;
+//     timeleft = (jsquiz.length * 20);
     
-    $timer.style.display = "block";
-    $timer.innerText=timeleft;
+//     $timer.style.display = "block";
+//     $timer.innerText=timeleft;
 
-    //Start timer count down.
-    timerInterval = setInterval(() => {
-        $timer.innerText=timeleft;
-        timeleft--;
-        timeleft <0 ? clearInterval(timerInterval):0;
-    }, 1000);
+//     //Start timer count down.
+//     timerInterval = setInterval(() => {
+//         $timer.innerText=timeleft;
+//         timeleft--;
+//         timeleft <0 ? clearInterval(timerInterval):0;
+//     }, 1000);
 
-    //Display First Question - see qPointer==0;
-    displayQuestion(qPointer);
-});
+//     //Display First Question - see qPointer==0;
+//     displayQuestion(qPointer);
+// });
 
 function displayQuestion(qPointer) {
     //HTML ELEMENTS
