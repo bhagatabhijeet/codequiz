@@ -3,7 +3,8 @@ let quiz = {
     questionSource: null,
     quizStat: {
         incorrectCount: 0,
-        correctCount: 0
+        correctCount: 0,
+        score: 0
     },
     timeleft: 0,
     initialTimeLeft: 0,
@@ -63,7 +64,7 @@ function prepareUI() {
     document.getElementById("quiz-start").style.display = "none";
     $quizContainer.style.display = "block";
     $timer.style.display = "block";
-    $timer.innerText = quiz.timeleft;    
+    $timer.innerText = quiz.timeleft;
 }
 
 function quizTimer() {
@@ -84,9 +85,9 @@ function quizTimer() {
 
         $timer.innerText = quiz.timeleft;
         quiz.timeleft--;
-        if (quiz.timeleft < 0) {            
+        if (quiz.timeleft < 0) {
             clearInterval(quizTimerInterval);
-            setTimeout(showScoreAndSaveForm,2000,"timeout");
+            setTimeout(showScoreAndSaveForm, 2000, "timeout");
         }
     }, 1000);
 }
@@ -98,7 +99,7 @@ function displayQuestion() {
     let $qdifflevel = document.getElementById("dlevel");
     let $qcat = document.getElementById("category");
 
-    $qnum.innerText = quiz.questionSource[quiz.qPointer].num;
+    $qnum.innerText = quiz.questionSource[quiz.qPointer].num + " of " + quiz.questionSource.length;
     $qtext.innerText = quiz.questionSource[quiz.qPointer].q;
     $qdifflevel.innerText = quiz.questionSource[quiz.qPointer].difficulty.toUpperCase();
     $qcat.innerText = quiz.questionSource[quiz.qPointer].category;
@@ -176,11 +177,11 @@ function checkAnswer(ansId) {
     quiz.qPointer++;
 
     //Next Question
-    if (quiz.timeleft <= 0) {        
+    if (quiz.timeleft <= 0) {
         $("#feedback").fadeOut(2000);
-        setTimeout(showScoreAndSaveForm, 2000,"timeout");
-    }else if( quiz.qPointer >= quiz.questionSource.length){
-        setTimeout(showScoreAndSaveForm, 2000,"completed");
+        setTimeout(showScoreAndSaveForm, 2000, "timeout");
+    } else if (quiz.qPointer >= quiz.questionSource.length) {
+        setTimeout(showScoreAndSaveForm, 2000, "completed");
     }
     else {
         $("#feedback").fadeOut(2000);
@@ -193,22 +194,66 @@ function checkAnswer(ansId) {
 }
 
 function showScoreAndSaveForm(msg) {
-    let $completionmessage=document.getElementById("completionmessage");
-    let $scoremessage=document.getElementById("scoremessage");
+    let $completionmessage = document.getElementById("completionmessage");
+    let $scoremessage = document.getElementById("scoremessage");
+    let $pointrules = document.getElementById("pointrules");
+    let $submitBtn = document.getElementById("submit");
 
     clearInterval(quizTimerInterval);
-    $timer.style.display="none";
-    $quizContainer.style.display="none";
-    $scoreContainer.style.display="block";
-    if(msg == "timeout")
-    {
-        $completionmessage.textContent="All Questions Not Answered."
+    $timer.style.display = "none";
+    $quizContainer.style.display = "none";
+    $scoreContainer.style.display = "block";
+    if (msg == "timeout") {
+        $completionmessage.textContent = "All Questions Not Answered."
     }
-    if(msg == "completed")
-    {
-        $completionmessage.textContent="All Questions Answered."
+    if (msg == "completed") {
+        $completionmessage.textContent = "All Questions Answered."
     }
-    // alert(msg);
+    //10 points for correct answer
+    //-5 points for incorrect answer
+    //-8 points for non attempted question.
+    let unattempted = quiz.questionSource.length - (quiz.quizStat.correctCount + quiz.quizStat.incorrectCount)
+    let score = quiz.quizStat.correctCount * 10 - quiz.quizStat.incorrectCount * 5 - unattempted * 8;
+    $scoremessage.textContent = "Your Score : " + score;
+
+    quiz.quizStat.score = score;
+
+    $pointrules.innerText = "* 10 points for correct answer; * -5 points for incorrect answer; * -8 points for un-attempted question."
+    $submitBtn.addEventListener("click", submitScore);
+}
+
+function submitScore(e) {
+    let $user = document.getElementById("initial").value;
+    //prevent defualt
+    e.preventDefault();
+    // localStorage.setItem($user, quiz.quizStat.score);
+    alert($user + " submitting score");
+
+    // $highscorecontainer = document.querySelector(".highscorecontainer");
+    // $scoreContainer.display = "none";
+    // $highscorecontainer.display = "block";
+    showHighScore();
+}
+
+function showHighScore() {
+    $highscorecontainer = document.querySelector(".highscorecontainer");
+    $scoreContainer.style.display = "none";
+    $highscorecontainer.style.display = "block";
+
+    // let table = document.getElementById("scoretable");
+
+    
+    // // Create an empty <tr> element and add it to the 1st position of the table:
+    // var row = table.insertRow(0);
+
+    // // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+    // var cell1 = row.insertCell(0);
+    // var cell2 = row.insertCell(1);
+
+    // // Add some text to the new cells:
+    // cell1.innerHTML = "NEW CELL1";
+    // cell2.innerHTML = "NEW CELL2";
+
 }
 
 
