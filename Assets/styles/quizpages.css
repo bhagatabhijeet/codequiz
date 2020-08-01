@@ -67,6 +67,12 @@ body{
     display: none;
 }
 
+.score-container{
+    display: none;
+    text-align: center;
+    align-content: center;
+}
+
 .quiz-container{
     display:none;    
 }
@@ -113,4 +119,17 @@ body{
 }
 .btn-block{
     text-align: left;
+}
+
+#completionmessage{
+    font-size: 25px;
+}
+#scoremessage{
+    font-size: 20px;
+}
+
+#initial{
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -21,7 +21,7 @@ let jsquiz = [
                 optiontext: "Abhijeet"
             }
         ],
-        correctOption: 1,
+        correctOption: 2,
         difficulty: "hard",
         category: "Meta"
     }
