@@ -1,4 +1,4 @@
-
+// questionSource Object
 let jsquiz = [
     {
         num: 1,
@@ -127,14 +127,20 @@ let jsquiz = [
         category: "Operators"
     }
 ]
-
+// *** Set questionSource here ***
 quiz.setQuestionSource(jsquiz);
+
+// *** Set the quizName here ***
 quiz.setQuizName("javascript");
 
+//* Set the quiz pages title here*/
 let pageNavbarTitleText = "JavaScript Quiz";
 
+// The modal readme dialog is shown at the start of quiz
+// set the modal title here
 let quiReadMeTitleText="JavaScript Quiz - Read Me";
 
+//set the modal html here
 let quizReadMeHTML=`<ul>
 <li><em>Code Quiz</em>'s <strong>JavaScript Quiz</strong> is a set of JavaScript basic to
     intermediate level multiple choice questions.</li>
@@ -156,7 +162,7 @@ Scores are calulated using following rules :
 to get comfortable,before attempting real quiz.</li>
 </ul>`
 
-
+//****** don't touch the following function. it is used to load animation at the start of quiz page *****/
 
 $(document).ready(function () {    
     $("#homepageimage").delay(500).animate({ left: "0%" }, 2000);
