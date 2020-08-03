@@ -199,7 +199,8 @@ footer{
     background-color: rgb(34, 29, 29);
     margin:10px;
 }
-.btn:hover:enabled{
+
+.btn:hover,.btn:hover:enabled{
     color:#4ca8cd;
     background-color: black
 }
