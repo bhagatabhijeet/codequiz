@@ -55,6 +55,7 @@ let pracquiz = [
 ]
 
 quiz.setQuestionSource(pracquiz);
+quiz.setQuizName("practice");
 
 let pageNavbarTitleText = "Practice Quiz";
 

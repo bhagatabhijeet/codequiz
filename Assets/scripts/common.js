@@ -1,6 +1,7 @@
 //Quiz Object
 let quiz = {
     questionSource: null,
+    quizName:"",
     quizStat: {
         incorrectCount: 0,
         correctCount: 0,
@@ -11,6 +12,9 @@ let quiz = {
 
     //qPointer points to current Question
     qPointer: 0,
+    setQuizName:function(name){
+        this.quizName=name;
+    },
     setQuestionSource: function (qObject) {
         this.questionSource = qObject;
         document.getElementById("quiz-start").addEventListener("click", startQuiz);
@@ -233,16 +237,16 @@ function submitScore(e) {
     //prevent defualt
     e.preventDefault();
 
-    let cqScores = localStorage.getItem("cqscores");
+    let cqScores = localStorage.getItem("cq"+ quiz.quizName);
 
     if (cqScores === null) {
-        cqScoresObj = [{
+        cqScoresObj =[{
             username: $user,
             score: quiz.quizStat.score,
             time: getDateTimeString()
         }];
         cqScores = JSON.stringify(cqScoresObj);
-        localStorage.setItem("cqscores", cqScores);
+        localStorage.setItem("cq" + quiz.quizName, cqScores);
     }
     else {
         cqScoresObj = JSON.parse(cqScores);
@@ -256,7 +260,7 @@ function submitScore(e) {
         });
         cqScoresObj = cqScoresObj.slice(0, 10);
         cqScores = JSON.stringify(cqScoresObj);
-        localStorage.setItem("cqscores", cqScores);
+        localStorage.setItem("cq" + quiz.quizName, cqScores);
     }
 
 
@@ -305,7 +309,7 @@ function showHighScore(cqScoresObj) {
 // }
 
 $clearHighScore.addEventListener("click", function () {
-    localStorage.removeItem("cqscores");
+    localStorage.removeItem("cq"+ quiz.quizName);
     $scoreTable.remove();
 
 

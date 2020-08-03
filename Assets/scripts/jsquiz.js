@@ -59,6 +59,7 @@ let jsquiz = [
 ]
 
 quiz.setQuestionSource(jsquiz);
+quiz.setQuizName("javascript");
 
 let pageNavbarTitleText = "JavaScript Quiz";
 
