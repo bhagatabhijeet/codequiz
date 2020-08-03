@@ -116,7 +116,7 @@ let jsquiz = [
     },
     {
         num: 10,
-        q: "The ++ operator is called",
+        q: "The ++ operator after variable name is called",
         options: [
             { id: 1, optiontext: "Add 2 Times Operator" },
             { id: 2, optiontext: "Post Increment" }, 
