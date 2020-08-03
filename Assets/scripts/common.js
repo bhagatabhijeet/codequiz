@@ -42,6 +42,8 @@ let $quizContainer = document.querySelector(".quiz-container");
 let $timer = document.querySelector(".timer");
 let $ansOptions = document.getElementById("options");
 let $scoreContainer = document.querySelector(".score-container");
+let $clearHighScore = document.getElementById("clearHighScores")
+let $scoreTable = document.getElementById("scoretable");
 
 //Add every button  created to ansOptionsArray.
 // This will be used to ** DISABLE ** buttons once the user clicks an answer.
@@ -123,7 +125,8 @@ function buildAndDisplayOptions() {
         // Add bootstrap classes to button
         $optBtn.classList.add("btn", "btn-md", "btn-block");
 
-        // set each button's data-id attribute. **** THIS IS IMPORTANT **** as data-id will be used to check correctness.
+        // set each button's data-id attribute.
+        // **** THIS IS IMPORTANT **** as data-id will be used to check correctness.
         $optBtn.setAttribute("data-id", element.id);
         $optBtn.innerText = element.optiontext;
 
@@ -214,47 +217,99 @@ function showScoreAndSaveForm(msg) {
     //-8 points for non attempted question.
     let unattempted = quiz.questionSource.length - (quiz.quizStat.correctCount + quiz.quizStat.incorrectCount)
     let score = quiz.quizStat.correctCount * 10 - quiz.quizStat.incorrectCount * 5 - unattempted * 8;
-    $scoremessage.textContent = "Your Score : " + score;
+    $scoremessage.textContent = "Your Score is " + score;
 
     quiz.quizStat.score = score;
 
-    $pointrules.innerText = "* 10 points for correct answer; * -5 points for incorrect answer; * -8 points for un-attempted question."
+    $pointrules.innerText = "* 10 points for correct answer;" +
+        "* -5 points for incorrect answer;" +
+        "* -8 points for un-attempted question.";
     $submitBtn.addEventListener("click", submitScore);
 }
 
 function submitScore(e) {
     let $user = document.getElementById("initial").value;
+    let cqScoresObj;
     //prevent defualt
     e.preventDefault();
+
+    let cqScores = localStorage.getItem("cqscores");
+
+    if (cqScores === null) {
+        cqScoresObj = [{
+            username: $user,
+            score: quiz.quizStat.score,
+            time: getDateTimeString()
+        }];
+        cqScores = JSON.stringify(cqScoresObj);
+        localStorage.setItem("cqscores", cqScores);
+    }
+    else {
+        cqScoresObj = JSON.parse(cqScores);
+        cqScoresObj.unshift({
+            username: $user,
+            score: quiz.quizStat.score,
+            time: getDateTimeString()
+        });
+        cqScoresObj.sort(function (a, b) {
+            return b.score - a.score;
+        });
+        cqScoresObj = cqScoresObj.slice(0, 10);
+        cqScores = JSON.stringify(cqScoresObj);
+        localStorage.setItem("cqscores", cqScores);
+    }
+
+
     // localStorage.setItem($user, quiz.quizStat.score);
-    alert($user + " submitting score");
+    // alert($user + " submitting score");
 
     // $highscorecontainer = document.querySelector(".highscorecontainer");
     // $scoreContainer.display = "none";
     // $highscorecontainer.display = "block";
-    showHighScore();
+    showHighScore(cqScoresObj);
 }
 
-function showHighScore() {
+function getDateTimeString() {
+    let today = new Date();
+    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    let dateTime = date + ' ' + time;
+    return dateTime;
+}
+
+function showHighScore(cqScoresObj) {
     $highscorecontainer = document.querySelector(".highscorecontainer");
     $scoreContainer.style.display = "none";
     $highscorecontainer.style.display = "block";
 
-    // let table = document.getElementById("scoretable");
+    let i = 1;
+    cqScoresObj.forEach(e => {
+        let row = $scoreTable.insertRow();
+        let c0 = row.insertCell(0);
+        c0.innerText = i++;
+        let c1 = row.insertCell(1);
+        c1.innerText = e.username;
+        let c2 = row.insertCell(2);
+        c2.innerText = e.score;
+        let c3 = row.insertCell(3);
+        c3.innerText = e.time;
 
-    
-    // // Create an empty <tr> element and add it to the 1st position of the table:
-    // var row = table.insertRow(0);
-
-    // // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
-    // var cell1 = row.insertCell(0);
-    // var cell2 = row.insertCell(1);
-
-    // // Add some text to the new cells:
-    // cell1.innerHTML = "NEW CELL1";
-    // cell2.innerHTML = "NEW CELL2";
+    });
 
 }
+
+// function clearHighScores()
+// {
+//     localStorage.removeItem("cqscores");
+//     $scoreTable.remove();
+// }
+
+$clearHighScore.addEventListener("click", function () {
+    localStorage.removeItem("cqscores");
+    $scoreTable.remove();
+
+
+});
 
 
 
