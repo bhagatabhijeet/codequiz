@@ -106,6 +106,7 @@ body{
 }
 .modal .modal-dialog .modal-content{
     background-color: rgb(195, 213, 247) !important;
+    font-size:15px;
 }
 
 #quiz-start-div{
