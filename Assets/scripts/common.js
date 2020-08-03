@@ -204,10 +204,10 @@ function showScoreAndSaveForm(msg) {
     $quizContainer.style.display = "none";
     $scoreContainer.style.display = "block";
     if (msg == "timeout") {
-        $completionmessage.textContent = "All Questions Not Answered."
+        $completionmessage.textContent = "Not all Questions Answered"
     }
     if (msg == "completed") {
-        $completionmessage.textContent = "All Questions Answered."
+        $completionmessage.textContent = "All Questions Answered"
     }
     //10 points for correct answer
     //-5 points for incorrect answer
