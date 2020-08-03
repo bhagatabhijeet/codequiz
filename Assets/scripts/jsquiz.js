@@ -2,11 +2,12 @@
 let jsquiz = [
     {
         num: 1,
-        q: "what's your name",
+        q: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
         options: [
-            { id: 1, optiontext: "Abhijeet" },
-            { id: 2, optiontext: "Aaroh" },
-            { id: 3, optiontext: "Roheeni" }
+            { id: 1, optiontext: "The User's machine running a Web browser" },
+            { id: 2, optiontext: "The Web server" },
+            { id: 3, optiontext: "A central machine deep within Netscape's corporate offices" },
+            { id: 4, optiontext: "None of above" }
         ],
         correctOption: 1,
         difficulty: "easy",
@@ -14,48 +15,117 @@ let jsquiz = [
     },
     {
         num: 2,
-        q: "Aaroh's Mom's Name is ______",
+        q: "which of the following is NOT a valid JavaScript variable name",
         options: [
-            { id: 1, optiontext: "Ronini" },
-            { id: 2, optiontext: "Romini" },
-            { id: 3, optiontext: "Rukmini" },
-            { id: 4, optiontext: "Rulamini" },
-            { id: 5, optiontext: "Roheeni" },
-            { id: 6, optiontext: "Rodini" }
+            { id: 1, optiontext: "_firstName" },
+            { id: 2, optiontext: "$lastName" },
+            { id: 3, optiontext: "I" },
+            { id: 4, optiontext: "Name2" },
+            { id: 5, optiontext: "2Name" },            
         ],
         correctOption: 5,
-        difficulty: "hard",
-        category: "Meta"
+        difficulty: "medium",
+        category: "Language Basics"
     },
     {
         num: 3,
-        q: "Aaroh's full name is ",
+        q: "What is the correct JavaScript syntax to write 'Hello World' to HTML?",
         options: [
-            { id: 1, optiontext: "Aaroh N Bhagat" },
-            { id: 2, optiontext: "Aaroh A Bhagat" },
-            { id: 3, optiontext: "Aaroh M Bhagat" },
-            { id: 4, optiontext: "Aaroh E" }
+            { id: 1, optiontext: "System.out.prinln('Hello World);" },
+            { id: 2, optiontext: "println('Hello World);" },
+            { id: 3, optiontext: "document.write('Hello World);" },
+            { id: 4, optiontext: "console.log(('Hello World);" }
         ],
-        correctOption: 2,
-        difficulty: "hard",
-        category: "Personal"
+        correctOption: 3,
+        difficulty: "medium",
+        category: "Language Basics"
     },
     {
         num: 4,
-        q: "Aaroh's School is ____",
+        q: "What is correct syntax to refer to external scirpt file named abc.js?",
         options: [
-            { id: 1, optiontext: "Faloon Middle School" },
-            { id: 2, optiontext: "Saloon High" },
-            { id: 3, optiontext: "Aaroh Elementry" },
-            { id: 4, optiontext: "Fallon Middle School" }
+            { id: 1, optiontext: "<script href='abc.js'>" },
+            { id: 2, optiontext: "<script name='abc.js'>" },
+            { id: 3, optiontext: "<script src='abc.js'>" },
+            { id: 4, optiontext: "None of the above" }
+        ],
+        correctOption: 3,
+        difficulty: "medium",
+        category: "Language Basics"
+    },
+    {
+        num: 5,
+        q: "JavaScript is interpreted by ________",
+        options: [
+            { id: 1, optiontext: "Object" },
+            { id: 2, optiontext: "Server" },
+            { id: 3, optiontext: "JavaScript is not interpreted" },
+            { id: 4, optiontext: "Client" }
         ],
         correctOption: 4,
+        difficulty: "medium",
+        category: "Language Basics"
+    },
+    {
+        num: 6,
+        q: "The ___ method of Array adds and/or remove elements",
+        options: [
+            { id: 1, optiontext: "Splice" },
+            { id: 2, optiontext: "Shift" },
+            { id: 3, optiontext: "Reverse" },
+            { id: 4, optiontext: "Slice" }
+        ],
+        correctOption: 1,
         difficulty: "hard",
-        category: "Personal"
+        category: "Array Object"
+    },
+    {
+        num: 7,
+        q: "let I=1;let A=0; A=I++; what is final value of A and I",
+        options: [
+            { id: 1, optiontext: "A is 2 and I is 2" },
+            { id: 2, optiontext: "A is 1 and I is 2" },
+            { id: 3, optiontext: "A is 1 and I is 1" },            
+        ],
+        correctOption: 2,
+        difficulty: "hard",
+        category: "Operators"
+    },
+    {
+        num: 8,
+        q: "In JavaScrip functions can be nested",
+        options: [
+            { id: 1, optiontext: "False" },
+            { id: 2, optiontext: "True" },                       
+        ],
+        correctOption: 2,
+        difficulty: "hard",
+        category: "Functions"
+    },
+    {
+        num: 9,
+        q: "x=4+'4'; // What is value of x",
+        options: [
+            { id: 1, optiontext: "8" },
+            { id: 2, optiontext: "Error" }, 
+            { id: 3, optiontext: "'44'" },                         
+        ],
+        correctOption: 3,
+        difficulty: "medium",
+        category: "Type Coercion"
+    },
+    {
+        num: 10,
+        q: "The ++ operator is called",
+        options: [
+            { id: 1, optiontext: "Add 2 Times Operator" },
+            { id: 2, optiontext: "Post Increment" }, 
+            { id: 3, optiontext: "Extra Add Operator" },                         
+        ],
+        correctOption: 2,
+        difficulty: "easy",
+        category: "Operators"
     }
-
-
-
 ]
 
 quiz.setQuestionSource(jsquiz);
