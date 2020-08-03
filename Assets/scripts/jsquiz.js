@@ -58,14 +58,15 @@ let jsquiz = [
 
 ]
 
+quiz.setQuestionSource(jsquiz);
+
 let pageNavbarTitleText = "JavaScript Quiz";
 
 let quiReadMeTitleText="JavaScript Quiz - Read Me";
 
 let quizReadMeHTML=`<ul>
 <li><em>Code Quiz</em>'s <strong>JavaScript Quiz</strong> is a set of JavaScript basic to
-    intermediate level questions.</li>
-<li>You are presented with multiple options for an answer.</li>
+    intermediate level multiple choice questions.</li>
 <li>You have to finish the quiz within alloted time.</li>                        
 <li>The timer will start ticking as soon as you click the <em>'Start Quiz'</em> button.</li>
 <li>After selecting an option, we'll immidiately show if your answer was correct or incorrect.</li>
@@ -80,13 +81,13 @@ Scores are calulated using following rules :
 </ul>
 </li>
 <li>You'll be presented with your final score summary and option to save your score.</li>
+<li>You may want to take our <em style="color:#fc8282"><a href="index.html">Practice Quiz</a></em> 
+to get comfortable,before attempting real quiz.</li>
 </ul>`
 
 
 
 $(document).ready(function () {    
-    // $modal = document.querySelector(".modal-body");
-    // $modal.innerHtml = "a";
     $("#homepageimage").delay(500).animate({ left: "0%" }, 2000);
     $("#homepageimage").fadeOut();
     $(".screen").delay(800).animate({ width:"0" }, 3000);
@@ -100,54 +101,8 @@ $(document).ready(function () {
     mTitleText[0].textContent=quiReadMeTitleText;
     
     var mbody =modal.find(".modal-body");
-    mbody[0].innerHTML=quizReadMeHTML;
-    // alert(mbody.innerHtml);
-    $('#readMeModalLong').modal();
-    // document.getElementByClass("modal-body").innerHTML = "<p>some text</p>";
-    // $modal = document.querySelector(".modal-body");
-    // $modal.innerHtml = "a";
+    mbody[0].innerHTML=quizReadMeHTML;    
+    $('#readMeModalLong').modal();    
 });
-
-//HTML ELEMENTS
-// let $quizContainer = document.querySelector(".quiz-container");
-
-
-//TIMER
-// let $timer = document.querySelector(".timer");
-// let timercontrol, timeleft, timerInterval;
-
-//Score
-// let correctCount = 0;
-// let incorrectCount = 0;
-
-quiz.setQuestionSource(jsquiz);
-
-
-
-// document.getElementById("quiz-start").addEventListener("click", function () {
-//     document.getElementById("quiz-start").style.display = "none";
-//     $quizContainer.style.display = "block";
-//     //qPointer points to question in Quiz Object.
-//     let qPointer = 0;
-//     timeleft = (jsquiz.length * 20);
-    
-//     $timer.style.display = "block";
-//     $timer.innerText=timeleft;
-
-//     //Start timer count down.
-//     timerInterval = setInterval(() => {
-//         $timer.innerText=timeleft;
-//         timeleft--;
-//         timeleft <0 ? clearInterval(timerInterval):0;
-//     }, 1000);
-
-//     //Display First Question - see qPointer==0;
-//     displayQuestion(qPointer);
-// });
-
-
-
-
-
 
 
