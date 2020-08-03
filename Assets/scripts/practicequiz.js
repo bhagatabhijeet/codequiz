@@ -1,4 +1,4 @@
-
+// questionSource Object
 let pracquiz = [
     {
         num: 1,
@@ -54,13 +54,20 @@ let pracquiz = [
     }
 ]
 
+// *** Set questionSource here ***
 quiz.setQuestionSource(pracquiz);
+
+// *** Set the quizName here ***
 quiz.setQuizName("practice");
 
+//* Set the quiz pages title here*/
 let pageNavbarTitleText = "Practice Quiz";
 
+// The modal readme dialog is shown at the start of quiz
+// set the modal title here
 let quiReadMeTitleText="Practice Quiz - Read Me";
 
+//set the modal html here
 let quizReadMeHTML=`<ul>
 <li><em>Code Quiz</em>'s <strong>Practice Quiz</strong> is a set of Practice questions to practice CQ quiz.</li>
 <li>You have to finish the quiz within alloted time.</li>                        
@@ -79,7 +86,7 @@ Scores are calulated using following rules :
 <li>You'll be presented with your final score summary and option to save your score.</li>
 </ul>`
 
-
+//****** don't touch the following function. it is used to load animation at the start of quiz page *****/
 
 $(document).ready(function () {    
     $("#homepageimage").delay(500).animate({ left: "0%" }, 2000);
