@@ -1,3 +1,4 @@
+// play animations on start of index page.
 $(document).ready(function () {    
     $(".screen-center").animate({ left: "0%" }, 2000);
     $(".screen-center").fadeOut(1000);
