@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- my stylesheet -->
+    <link rel="stylesheet" type="text/css" href="Assets/styles/default.css" />
+    <link rel="stylesheet" type="text/css" href="Assets/styles/quizpages.css" />
+
+    <!-- favicon -->
+    <link rel="icon" href="Assets/images/logo.png" />
+
+    <title>Code Quiz</title>
+</head>
+
+<body>
+    <!-- navbar start -->
+    <nav class="navbar fixed-top">
+        <a class="navbar-brand" href="./index.html">
+            <img src="Assets/images/logo.png" width="35" height="35" class="d-inline-block align-top" alt=""
+                loading="lazy">
+
+        </a>
+        <!-- note that the navbar title text has id=pageNavbarTitleText. 
+            The id is used in we want to change the title from JavaScript -->
+        <div id="pageNavbarTitleText" class=".navbar-text">JavaScript Quiz</div>
+    </nav>
+    <img id="homepageimage" src="Assets/images/logo.png" alt="logo image" />
+
+    <!-- The screen div is just used for page load animation -->
+    <div class="screen"></div>
+
+    <!-- Modal to show ReadMe on start of a quiz.
+        The ReadMe Title and body can be controlled from JavaScript
+    -->
+    <div class="modal fade" id="readMeModalLong" tabindex="-1" role="dialog" aria-labelledby="readMeModalLongTitle"
+        aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="readMeModalLongTitle">
+                        <img src="Assets/images/pill_arrow.png" height="30px">
+                        <span id="readMeModalTitleText">
+                            <!-- The title is dynamically generated -->
+                        </span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- The modal body contents are generated dynamically from JavaScript
+                        The is to allow change of contents if required 
+                    -->
+
+                </div>
+                <div class="modal-footer">
+                    <!-- the modal footer close button -->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- container start -->
+    <div class="container">
+        <!-- The timer div will show the time left. -->
+        <div class="timer">
+            ---
+        </div>
+        <!-- The container contains single row with multiple other containers
+        like the quiz-container,score-container, highscore container
+        The display of these container is controlled inside common.js
+        -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="quiz-start-div">
+                    <!-- Start quiz button to trigger start quiz. -->
+                    <button id="quiz-start" class="btn btn-lg">Start Quiz</button>
+                </div>
+                <!-- quiz-container is where all questions are displayed -->
+                <div class="quiz-container">
+                    <div id="question">
+                        <!-- used to display the question number -->
+                        <div id="qnumdiv">
+                            <span>Question - </span>
+                            <span id="qnum"></span>
+                        </div>
+                        <!-- used to display the question difficulty level and category -->
+                        <div id="qmetadiv">
+                            <span>Level : </span><span id="dlevel"></span>
+                            <span>|</span>
+                            <span>Category : </span><span id="category"></span>
+                        </div>
+
+                        <hr>
+                        <!-- div to show actual quiz question -->
+                        <div id="qtext">Question</div>
+                        <hr>
+                    </div>
+                    <!-- div option is used to display the answer options -->
+                    <div id="options">
+                        <!-- The option buttons are added dynamically. The following static button is just for sample -->
+                        <button type="button" class="btn btn-primary btn-md btn-block">This is one of the
+                            option</button>
+                    </div>
+                    <div>
+                        <!-- immidiated feedback whether the answer chosen was correct or incorrect -->
+                        <span id="feedback">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <!-- quiz-container End -->
+                </div>
+                <!-- score container is used to show score summary to the user -->
+                <div class="score-container">
+                    <!-- completion message is generated dynamically -->
+                    <div id="completionmessage">
+                        Sample completion message
+                    </div>
+                    <!-- score message is generated dynamically  -->
+                    <div id="scoremessage">
+                        Sample score message
+                    </div>
+                    <!-- scoring rules are again shown to user -->
+                    <small id="pointrules"></small>
+                    <hr />
+                    <!-- save score form is shown to user upon completion or timeout -->
+                    <div class="savescoreform">
+                        <form>
+                            <div class="form-group">
+                                <label for="initial">Enter Your Name or Initials</label>
+                                <input type="text" class="form-control form-control-sm" id="initial"
+                                    placeholder="Name or Initials">
+                            </div>
+                            <button class="btn btn-sm" type="submit" id="submit">Submit</button>
+                        </form>
+                    </div>
+                    <!-- score-container end -->
+                </div>
+                <!-- highscorecontainer is used to show highscore summary -->
+                <div class="highscorecontainer">
+                    <div style="font-size:25px;font-weight: 800;">Last 10 High Scores </div>
+                    <table id="scoretable">
+                        <tr>
+                            <th>#</th>
+                            <th>User</th>
+                            <th>Score</th>
+                            <th>Date-Time</th>
+                        </tr>
+                    </table>
+                    <a class="btn btn-sm" href="index.html" role="button">
+                        <img src="Assets/images/pill_arrow_trans.png" height="20px" />
+                        Go Home
+                    </a>
+                    <button class="btn btn-sm"id="clearHighScores">Clear High Scores</button>
+                    <!-- highscore container end -->
+                </div>
+                <!-- column end -->
+            </div>
+            <!-- row end -->
+        </div>
+        <!--container end-->
+    </div>
+
+    <div style="height: 45px;"></div>
+    <!--hack to allow scroll content behind the fixed footer-->
+
+    <footer>
+        <!--footer start-->
+        <img src="Assets/images/pill_arrow.png" height="15px"> Coded By Abhijeet Bhagat
+        <a href="https://github.com/bhagatabhijeet/codequiz">
+            <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
+    </footer>
+    <!--footer end-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="Assets/scripts/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- common.js for quiz logic and gitquiz.js for question source -->
+    <script src="Assets/scripts/common.js"></script>
+    <script src="Assets/scripts/gitquiz.js"></script>
+</body>
+
+</html>
