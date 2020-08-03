@@ -58,7 +58,9 @@ let jsquiz = [
 
 ]
 
-let quiReadMeTitleText="JavaScript Quiz - Read Me"
+let pageNavbarTitleText = "JavaScript Quiz";
+
+let quiReadMeTitleText="JavaScript Quiz - Read Me";
 
 let quizReadMeHTML=`<ul>
 <li><em>Code Quiz</em>'s <strong>JavaScript Quiz</strong> is a set of JavaScript basic to
@@ -90,7 +92,7 @@ $(document).ready(function () {
     $(".screen").delay(800).animate({ width:"0" }, 3000);
 
     let navBarTitle = document.getElementById("pageNavbarTitleText");
-    navBarTitle.textContent="JavaScript Quiz+++";
+    navBarTitle.textContent=pageNavbarTitleText;
     
     var modal=$('#readMeModalLong');
     
