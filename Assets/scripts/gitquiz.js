@@ -2,129 +2,81 @@
 let gitquiz = [
     {
         num: 1,
-        q: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
+        q: "Which command is used to show limited number of commits?",
         options: [
-            { id: 1, optiontext: "The User's machine running a Web browser" },
-            { id: 2, optiontext: "The Web server" },
-            { id: 3, optiontext: "A central machine deep within Netscape's corporate offices" },
-            { id: 4, optiontext: "None of above" }
+            { id: 1, optiontext: "git fetch <remote>" },
+            { id: 2, optiontext: "git log -n <limit>" },
+            { id: 3, optiontext: "git config <limit>" },
+            { id: 4, optiontext: "git status" }
+        ],
+        correctOption: 2,
+        difficulty: "easy",
+        category: "GIT History"
+    },
+    {
+        num: 2,
+        q: "which command defines the author and email to be used for all commits by current user?",
+        options: [
+            { id: 1, optiontext: "git clean -f <path>" },
+            { id: 2, optiontext: "git merge" },
+            { id: 3, optiontext: "git config --global user.email <email>" },
+            { id: 4, optiontext: "git config --amend" },                       
+        ],
+        correctOption: 3,
+        difficulty: "medium",
+        category: "GIT Config"
+    },
+    {
+        num: 3,
+        q: "___ command is used to get commit history overview.",
+        options: [
+            { id: 1, optiontext: "git log --oneline" },
+            { id: 2, optiontext: "git log --overview" },
+            { id: 3, optiontext: "git reset --hard" },
+            { id: 4, optiontext: "git rebase <base>" }
         ],
         correctOption: 1,
+        difficulty: "medium",
+        category: "GIT History"
+    },
+    {
+        num: 4,
+        q: "___ removes untracked files from your working directory",
+        options: [
+            { id: 1, optiontext: "git commit" },
+            { id: 2, optiontext: "git delete" },
+            { id: 3, optiontext: "git clean" },
+            { id: 4, optiontext: "git reset" }
+        ],
+        correctOption: 3,
+        difficulty: "medium",
+        category: "GIT Porcelain Command"
+    },
+    {
+        num: 5,
+        q: "which of the following command line environment is used to interact with GIT?",
+        options: [
+            { id: 1, optiontext: "GitHub"},
+            { id: 2, optiontext: "Git Bash" },
+            { id: 3, optiontext: "Git Lab" },
+            { id: 4, optiontext: "Git Boot" }
+        ],
+        correctOption: 2,
         difficulty: "easy",
         category: "Meta Information"
     },
     {
-        num: 2,
-        q: "which of the following is NOT a valid JavaScript variable name",
-        options: [
-            { id: 1, optiontext: "_firstName" },
-            { id: 2, optiontext: "$lastName" },
-            { id: 3, optiontext: "I" },
-            { id: 4, optiontext: "Name2" },
-            { id: 5, optiontext: "2Name" },            
-        ],
-        correctOption: 5,
-        difficulty: "medium",
-        category: "Language Basics"
-    },
-    {
-        num: 3,
-        q: "What is the correct JavaScript syntax to write 'Hello World' to HTML?",
-        options: [
-            { id: 1, optiontext: "System.out.prinln('Hello World);" },
-            { id: 2, optiontext: "println('Hello World);" },
-            { id: 3, optiontext: "document.write('Hello World);" },
-            { id: 4, optiontext: "console.log(('Hello World);" }
-        ],
-        correctOption: 3,
-        difficulty: "medium",
-        category: "Language Basics"
-    },
-    {
-        num: 4,
-        q: "What is correct syntax to refer to external scirpt file named abc.js?",
-        options: [
-            { id: 1, optiontext: "<script href='abc.js'>" },
-            { id: 2, optiontext: "<script name='abc.js'>" },
-            { id: 3, optiontext: "<script src='abc.js'>" },
-            { id: 4, optiontext: "None of the above" }
-        ],
-        correctOption: 3,
-        difficulty: "medium",
-        category: "Language Basics"
-    },
-    {
-        num: 5,
-        q: "JavaScript is interpreted by ________",
-        options: [
-            { id: 1, optiontext: "Object" },
-            { id: 2, optiontext: "Server" },
-            { id: 3, optiontext: "JavaScript is not interpreted" },
-            { id: 4, optiontext: "Client" }
-        ],
-        correctOption: 4,
-        difficulty: "medium",
-        category: "Language Basics"
-    },
-    {
         num: 6,
-        q: "The ___ method of Array adds and/or remove elements",
+        q: "Which of the following is NOT a valid reference in Git Repository",
         options: [
-            { id: 1, optiontext: "Splice" },
-            { id: 2, optiontext: "Shift" },
-            { id: 3, optiontext: "Reverse" },
-            { id: 4, optiontext: "Slice" }
-        ],
-        correctOption: 1,
-        difficulty: "hard",
-        category: "Array Object"
-    },
-    {
-        num: 7,
-        q: "let I=1;let A=0; A=I++; what is final value of A and I",
-        options: [
-            { id: 1, optiontext: "A is 2 and I is 2" },
-            { id: 2, optiontext: "A is 1 and I is 2" },
-            { id: 3, optiontext: "A is 1 and I is 1" },            
+            { id: 1, optiontext: "Branch" },
+            { id: 2, optiontext: "Body" },
+            { id: 3, optiontext: "Commit" },
+            { id: 4, optiontext: "Head" }
         ],
         correctOption: 2,
         difficulty: "hard",
-        category: "Operators"
-    },
-    {
-        num: 8,
-        q: "In JavaScrip functions can be nested",
-        options: [
-            { id: 1, optiontext: "False" },
-            { id: 2, optiontext: "True" },                       
-        ],
-        correctOption: 2,
-        difficulty: "hard",
-        category: "Functions"
-    },
-    {
-        num: 9,
-        q: "x=4+'4'; // What is value of x",
-        options: [
-            { id: 1, optiontext: "8" },
-            { id: 2, optiontext: "Error" }, 
-            { id: 3, optiontext: "'44'" },                         
-        ],
-        correctOption: 3,
-        difficulty: "medium",
-        category: "Type Coercion"
-    },
-    {
-        num: 10,
-        q: "The ++ operator after variable name is called",
-        options: [
-            { id: 1, optiontext: "Add 2 Times Operator" },
-            { id: 2, optiontext: "Post Increment" }, 
-            { id: 3, optiontext: "Extra Add Operator" },                         
-        ],
-        correctOption: 2,
-        difficulty: "easy",
-        category: "Operators"
+        category: "GIT Internals"
     }
 ]
 
