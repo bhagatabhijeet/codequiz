@@ -89,6 +89,9 @@ $(document).ready(function () {
     $("#homepageimage").fadeOut();
     $(".screen").delay(800).animate({ width:"0" }, 3000);
 
+    let navBarTitle = document.getElementById("pageNavbarTitleText");
+    navBarTitle.textContent="JavaScript Quiz+++";
+    
     var modal=$('#readMeModalLong');
     
     var mTitleText = modal.find("#readMeModalTitleText");
