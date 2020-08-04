@@ -29,7 +29,6 @@ Code Quiz is a user friendly and developer friendly Quizzing application.
 ## Highlights
 
 * The **CQ** quizzes follow a consistent bootstrap controls and color theme.
-* I have not cluttered too many images in the pages thus making it a professional portfolio.
 * Super easy for developers to add new quizzes. *see for developer* section below.
 
 
