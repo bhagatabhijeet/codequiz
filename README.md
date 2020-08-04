@@ -25,6 +25,9 @@ Code Quiz is a user friendly and developer friendly Quizzing application.
 | 2 | Git Hub Pages  | https://bhagatabhijeet.github.io/codequiz/index.html |
 | ------------- | ------------- | ------------- |
 
+| 3 | Abhijeet Bhagat   | https://github.com/bhagatabhijeet |
+| ------------- | ------------- | ------------- |
+
 
 ## Highlights
 
